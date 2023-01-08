@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:quiz/database/connect_db.dart';
 import 'package:quiz/front/hompage.dart';
+import 'package:quiz/model/questionmodel.dart';
 
 void main() {
+  // var db = httpFunction();
+  // db.getQuestion();
   runApp(const MyApp());
 }
 
