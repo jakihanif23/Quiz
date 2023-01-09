@@ -37,7 +37,7 @@ class _QuizPageState extends State<QuizPage> {
           coundownt--;
         });
       } else {
-        // nextQuestion();
+        index++;
         coundownt = maxSeconds;
       }
     });
@@ -150,11 +150,6 @@ class _QuizPageState extends State<QuizPage> {
                   ).show();
                 } else {
                   setState(() {
-                    // _questions[index].options.forEach(((key, value) {
-                    //   if (value == true) {
-                    //     trueKeys.add(key);
-                    //   }
-                    // }));
                     index++;
                   });
                 }
