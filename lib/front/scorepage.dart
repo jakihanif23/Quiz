@@ -5,6 +5,7 @@ import 'package:quiz/database/connect_db.dart';
 import 'package:quiz/front/widgets/header.dart';
 import 'package:quiz/front/widgets/score/scoreprogress.dart';
 import 'package:quiz/model/questionmodel.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../color/constant.dart';
 
@@ -75,7 +76,12 @@ class _ScorePageState extends State<ScorePage> {
                           height: 30,
                         ),
                         ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () async {
+                              await Share.share(
+                                'I got ${widget.score} of ${widget.totalQuestion} From Quiz App',
+                                subject: 'Look What i Got'
+                              );
+                            },
                             child: const Text('Share your score')),
                         const SizedBox(
                           height: 5,
@@ -90,7 +96,6 @@ class _ScorePageState extends State<ScorePage> {
                         SizedBox(
                           height: 10,
                         ),
-
                         SizedBox(
                             width: double.infinity,
                             child: Column(

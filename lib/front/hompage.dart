@@ -7,6 +7,7 @@ import 'package:quiz/front/topicspage.dart';
 import 'package:quiz/front/widgets/playbutton.dart';
 import 'package:quiz/front/widgets/sharerate.dart';
 import 'package:quiz/front/widgets/topicsbutton.dart';
+import 'package:share_plus/share_plus.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -47,9 +48,12 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 70,
             ),
-            InkWell(onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>QuizPage()));
-            }, child: PlayButton()),
+            InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => QuizPage()));
+                },
+                child: PlayButton()),
             SizedBox(
               height: 10,
             ),
@@ -64,7 +68,11 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 30,
             ),
-            ShareAndRate()
+            ShareAndRate(
+              shareTap: () async {
+              },
+              rateTap: () {},
+            )
           ],
         ),
       ),
